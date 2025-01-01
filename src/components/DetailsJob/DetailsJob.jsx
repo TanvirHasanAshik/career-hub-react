@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { use } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import { getAppliedJob, setAppliedJob } from '../../utility/appliedJob';
 
 const DetailsJob = () => {
     const { id } = useParams();
     const jobs = useLoaderData();
     const [jobDetails, setJobDetails] = useState({});
+    const navigate = useNavigate();
+
     useEffect(() => {
         const job = jobs.find(job => job.id == id);
         setJobDetails(job);
@@ -23,7 +26,16 @@ const DetailsJob = () => {
         contact_information
     } = jobDetails;
 
-    console.log(contact_information)
+    const handleAppliedJob = (id) => {
+        const getApplyJob = getAppliedJob();
+        if (getApplyJob.includes(`${id}`)) {
+            alert('You have been applied already!');
+            return;
+        }
+        setAppliedJob(id);
+        alert('You have been applied successfully!');
+        navigate('/');
+    }
 
     return (
         <div className='container mx-auto my-10 border-t pt-4 '>
@@ -51,13 +63,16 @@ const DetailsJob = () => {
                         <p className='text-md font-bold'>Email: <span className='text-gray-500 font-semibold'>{contact_information?.email}</span></p>
                         <p className='text-md font-bold'>Phone: <span className='text-gray-500 font-semibold'>{contact_information?.phone}</span></p>
                         <p className='text-md font-bold'>Address: <span className='text-gray-500 font-semibold'>{contact_information?.address}</span></p>
-                        <button className="btn border-gray-200 w-full btn-success mt-2 text-warning font-bold">Ready to apply</button>
+                        <button
+                            className="btn border-gray-200 w-full btn-success mt-2 text-warning font-bold"
+                            onClick={() => handleAppliedJob(id)}
+                        >Ready to apply</button>
 
                     </div>
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 };
 
