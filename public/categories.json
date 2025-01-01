@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "logo": "https://img.freepik.com/free-vector/gradient-accounting-logo-template_23-2148846306.jpg?semt=ais_hybrid",
+        "category_name": "Account & Finance",
+        "availability": "300 Jobs Available"
+    },
+    {
+        "id": 2,
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2GT04J_L7ZFE_cv3yEPLEHRQuZzOHTgI4A&s",
+        "category_name": "Creative Design",
+        "availability": "100+ Jobs Available"
+    },
+    {
+        "id": 3,
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWW5PKBuIsWHJL6Ucqx6W0P0ePxKl2rPq1Pw&s",
+        "category_name": "Marketing & Sales",
+        "availability": "150 Jobs Available"
+    },
+    {
+        "id": 4,
+        "logo": "https://img.freepik.com/free-vector/gradient-mechanical-engineering-logo-template_23-2149991478.jpg?semt=ais_hybrid",
+        "category_name": "Engineering Job",
+        "availability": "224 Jobs Available"
+    }
+]
